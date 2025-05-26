@@ -1,1 +1,2 @@
-# ICT-LAB-PROJECT
+ICT-LAB-PROJECT
+Desi Food Corner is a static website project developed as part of an ICT semester course, showcasing an online platform for a traditional desi restaurant. The website allows users to explore a variety of South Asian dishes, including popular items, sweets, chutneys, naan, and beverages. It provides a visually appealing and user-friendly interface, complete with food images, prices, and descriptions. Users can select food items using checkboxes, which updates the total cost dynamically using JavaScript. Additional sections such as contact forms, customer ratings, and an "About Us" section further enhance the overall functionality of the website.
