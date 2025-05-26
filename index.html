@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Desi Food Corner</title>
+    <style> body {
+      font-family: Arial, sans-serif;
+      background: #fff8e1;
+      color: #333;
+      margin: 0;
+      padding: 0 20px 50px 20px;
+    }
+    header {
+      background: #d84315;
+      color: white;
+      text-align: center;
+      font-family:Arial,  sans-serif;
+      padding: 25px 10px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 10px 0;
+      text-align: center;
+      background: #bf360c;
+      margin: 0;
+    }
+    nav ul li {
+      display: inline-block;
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .menu {
+      margin-top: 25px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .food-item, .beverage-item {
+      display: flex;
+      border: 1px solid #f57c00;
+      border-radius: 8px;
+      background: white;
+      padding: 10px;
+      align-items: center;
+    }
+    .food-item img, .beverage-item img {
+      width: 150px;
+      height: 120px;
+      border-radius: 8px;
+      margin-right: 15px;
+      object-fit: cover;
+    }
+    .food-info {
+      flex-grow: 1;
+    }
+    .food-info h3 {
+      margin: 0 0 5px 0;
+      color: brown;
+    }
+    .food-info p {
+      margin: 0 0 5px 0;
+      font-size: 14px;
+    }
+    .food-info span {
+      font-weight: bold;
+      color: brown;
+    }
+    .food-select {
+      margin-left: 10px;
+    }
+    .cart {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: brown;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50px;
+      font-weight: bold;
+      cursor: default;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 2px 8px black;
+    }
+    .cart-icon {
+      font-size: 18px;
+    }
+    .rating {
+      direction: rtl;
+      display: inline-block;
+      font-size: 24px;
+      unicode-bidi: bidi-override;
+    }
+    /* Contact form styles */
+    #contact {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #f57c00;
+    }
+    #contact h2 {
+      color: brown;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    #contact label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+      color: #333;
+    }
+    #contact input[type="email"],
+    #contact input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+    #contact input[type="checkbox"] {
+      margin-right: 6px;
+    }
+    #contact button {
+      margin-top: 15px;
+      background: #d84315;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+    }
+    #contact button:hover {
+      background: #bf360c;
+    }
+        .page {
+            display: none;
+        }
+        #menu, #home, #contact, #about {
+            text-align: center;
+        }
+        #home:target, #menu:target, #contact:target, #about:target {
+            display: block;
+        }
+        .link {
+            background-color: #bf360c;
+            border: 2px solid white;
+            border-radius: 6px;
+            padding: 5px;
+            text-align: center;
+            font-size: 15pt;
+            color: white;
+            text-decoration: none;
+        }
+
+        .link a {
+            font-size: 15pt;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            padding: 2px;
+        }
+        .item:hover{
+                    color:lightslategray;/* you can change it to any color so that when a pointer 
+                    comes at home or about us or contact or menu its color will be changed*/
+                }
+        #img7{
+             width:1090PX;
+             height:500px;
+        }
+    </style>
+</head>
+<body>
+<header>
+  <h1>Desi Food Corner</h1>
+  <p>Authentic flavors from the heart of South Asia</p>
+</header>
+    <div class="link">
+        <a href="#home" class="item">home |</a>
+        <a href="#menu" class="item">menu|</a>
+        <a href="#contact" class="item">contact |</a>
+        <a href="#about" class="item">about</a>
+    </div>
+
+    <div id="home" class="page">
+       <br>
+       <img id="img7" src="DESI FOOD 1 (1).cms">
+       <br><br>
+       <img src="image main .jpg">
+       <p style="color:#bf360c;">Cheezious Copyright © 2025. All Rights Reserved.<br><br>TERMS & CONDITIONS| PRIVACY POLICY</p>
+
+    </div>
+
+    <div id="contact" class="page">
+        <section id="contact">
+  <h2>Contact Us</h2>
+  <form>
+    <label for="email">Your Email Address:</label>
+    <input type="email" id="email" name="email"  required>
+
+    <label>
+      <input type="checkbox" name="issue" value="food"> I had an issue with the food
+    </label>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <p style="margin-top: 20px; font-weight: bold; color: #d84315;">
+    For direct queries, reach us at:
+  </p>
+  <ul style="list-style: none; padding: 0;">
+    <li>Email: <a href="mailto:syedayusra.offiial087@gmail.com">syedayusra.offiial087@gmail.com</a></li>
+    <li>Email: <a href="mailto:shahzil082@gmail.com">shahzil082@gmail.com</a></li>
+    <li>Email: <a href="mailto:manokhalid097@gmail.com">manokhalid097@gmail.com</a></li>
+    <li>Phone: <a href="tel:0987-1899-098">0987-1899-098</a></li>
+  </ul>5
+</section>
+<h4>Rate the quality of food</h4>
+<div class="rating">
+  <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 stars">★★★★★</label>
+  <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 stars">★★★★</label>
+  <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 stars">★★★</label>
+  <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 stars">★★</label>
+  <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star">★</label>
+  </div>
+</section>
+    </div>
+
+    <div id="menu" class="page">
+         <section class="menu">
+  <h2>Popular Dishes</h2>
+  <div class="grid-container">
+    <div class="food-item">
+      <img src="biryani.jpg" alt="Biryani" />
+      <div class="food-info">
+        <h3>Hyderabadi Biryani</h3>
+        <p>Spicy and flavorful rice dish with tender meat.</p>
+        <span>PKR 450</span>
+      </div>
+      <input type="checkbox" class="food-select" data-price="450" data-name="Hyderabadi Biryani" />
+    </div>
+    <div class="food-item">
+      <img src="seekh kabab.jpg" alt="Seekh kabab" />
+      <div class="food-info">
+        <h3>Seekh kabab</h3>
+        <p>Spicy and flavorful mutton seekh kabab,Pack of six.</p>
+        <span>PKR 800</span>
+      </div>
+      <input type="checkbox" class="food-select" data-price="800" data-name="Seekh kabab" />
+    </div>
+    <div class="food-item">
+      <img src="butter-chicken.jpg" alt="Butter Chicken" />
+      <div class="food-info">
+        <h3>Butter Chicken</h3>
+        <p>Creamy tomato-based curry with grilled chicken.</p>
+        <span>PKR 550</span>
+      </div>
+      <input type="checkbox" class="food-select" data-price="550" data-name="Butter Chicken" />
+    </div>
+    <div class="food-item">
+      <img src="shami kabab.jpg" alt="Shami kabab" />
+      <div class="food-info">
+        <h3>Shami kabab</h3>
+        <p>Tender shami kabab,Pack of six.</p>
+        <span>PKR 600</span>
+      </div>
+      <input type="checkbox" class="food-select" data-price="600" data-name="Shami kabab" />
+    </div>
+    <div class="food-item">
+      <img src="Crispy rolls.jpg" alt="Crispy Rolls" />
+      <div class="food-info">
+        <h3>Crispy Rolls</h3>
+        <p>Filled with chicken and vegetables,Pack of six.</p>
+        <span>PKR 450</span>
+      </div>
+      <input type="checkbox" class="food-select" data-price="450" data-name="Crispy Rolls" />
+    </div>
+    <div class="food-item">
+      <img src="samosa.jpg" alt="Samosa" />
+      <div class="food-info">
+        <h3>Samosa</h3>
+        <p>Fried pastry filled with spiced potatoes and peas.</p>
+        <span>PKR 80</span>
+      </div>
+      <input type="checkbox" class="food-select" data-price="80" data-name="Samosa" />
+    </div>
+      <div class="food-item">
+      <img src="pakoras.jpg" alt="Pakore" />
+      <div class="food-info">
+        <h3>Pakore</h3>
+        <p>Spiced batter and deep-fried potatoes and vegetables.</p>
+        <span>PKR 250</span>
+      </div>
+      <input type="checkbox" class="food-select" data-price="250" data-name="Pakore" />
+    </div>
+        <div class="food-item">
+      <img src="Nihari.jpg" alt="Nihari" />
+      <div class="food-info">
+        <h3>Nihari</h3>
+        <p>The Indulgent Weekend Brunch.</p>
+        <span>PKR 800</span>
+      </div>
+      <input type="checkbox" class="food-select" data-price="800" data-name="Nihari" />
+    </div>
+    <div class="food-item">
+      <img src="saag.jpg" alt="Pakore" />
+      <div class="food-info">
+        <h3>Saag</h3>
+        <p>Fresh Leafy vegetable served with makki di roti.</p>
+        <span>PKR 500</span>
+      </div>
+      <input type="checkbox" class="food-select" data-price="500" data-name="Saag" />
+    </div>
+</section>
+<section class="menu">
+  <h2>Desi sweets</h2>
+   <div class="grid-container">
+    <div class="food-item">
+   <img src="kheer.jpg" alt="Kheer">
+      <div class="food-info">
+        <h3>Kheer</h3>
+        <p>Sweet made with rice.</p>
+        <span>PKR 350</span>
+      </div>
+      <input type="checkbox" class="food-select" data-price="350" data-name="Kheer"/>
+    </div>
+    <div class="food-item">
+   <img src="Gulab-Jamun.jpg" alt="Gulab-Jamun">
+      <div class="food-info">
+        <h3>Gulab-Jamun</h3>
+        <p>Indulge in the rich cultural delicacy of Pakistan with our gulab jamun recipe.</p>
+        <span>PKR 300</span>
+      </div>
+      <input type="checkbox" class="food-select" data-price="300" data-name="Kheer"/>
+    </div>
+    <div class="food-item">
+   <img src="suji halwa.jpg" alt="Suji ka halwa">
+      <div class="food-info">
+        <h3>Suji ka halwa</h3>
+        <p>Halwa made of suji with rich dry fruits.</p>
+        <span>PKR 400</span>
+      </div>
+      <input type="checkbox" class="food-select" data-price="300" data-name="Kheer"/>
+    </div>
+    <div class="food-item">
+   <img src="laddu.webp" alt="Laddu">
+      <div class="food-info">
+        <h3>Laddu</h3>
+        <p>Fresh laddus including fresh dry fruits.</p>
+        <span>PKR 550</span>
+      </div>
+      <input type="checkbox" class="food-select" data-price="550" data-name="Laddu"/>
+    </div>
+    </section>
+    <section class="menu">
+  
+<section class="menu">
+  <h2>Naan and Roti</h2>
+  <div class="grid-container">
+    <div class="food-item">
+      <img src="garlic naan.jpg" alt="Garlic Naan">
+      <div class="food-info">
+        <h3>Garlic Naan</h3>
+        <p>Freshly made garlic naan.</p>
+        <span>PKR 150</span>
+      </div>
+      <input type="checkbox" class="food-select" data-price="150" data-name="Garlic Naan"/>
+    </div>
+     <div class="food-item">
+      <img src="Makki-di-roti.jpg" alt="Makki-di-roti">
+      <div class="food-info">
+        <h3>Makki-di-roti</h3>
+        <p> flat unleavened bread made from corn meal (maize flour).</p>
+        <span>PKR 120</span>
+      </div>
+      <input type="checkbox" class="food-select" data-price="120" data-name="Makki-di-roti"/>
+    </div>
+    <div class="food-item">
+      <img src="chapati.jpg" alt="chapati">
+      <div class="food-info">
+        <h3>Chapati</h3>
+        <p> Freshly made chapati with love at home.</p>
+        <span>PKR 18</span>
+      </div>
+      <input type="checkbox" class="food-select" data-price="18" data-name="Chapati"/>
+    </div>
+  </section>
+<section class="menu">
+  <h2>Popular Desi Drinks</h2>
+  <div class="grid-container">
+    <div class="beverage-item">
+      <img src="Namkeen-Lassi-scaled.jpeg" alt="Namkeen Lassi">
+      <div class="food-info">
+        <h3>Namkeen Lassi</h3>
+        <p>Fresh Milk desi lassi</p>
+        <span>PKR 110</span>
+      </div>
+      <input type="checkbox" class="food-select" data-price="110" data-name="Namkeen Lassi"/>
+    </div>
+    <div class="beverage-item">
+      <img src="elichi.jpg" alt="Elaichi Sharbat"/>
+      <div class="food-info">
+        <h3>Elaichi Sharbat</h3>
+        <p>Refreshing cardamom-flavored drink, served chilled</p>
+        <span>PKR 150</span>
+      </div>
+      <input type="checkbox" class="food-select" data-price="150" data-name="Elaichi Sharbat">
+    </div>
+    <div class="beverage-item">
+      <img src="ed4f170934a6903610456c6c263911d8.jpg" alt="Butter Milk">
+      <div class="food-info">
+        <h3>Butter Milk</h3>
+        <p>Fermented dairy product with a tangy flavor</p>
+        <span>PKR 280</span>
+      </div>
+      <input type="checkbox" class="food-select" data-price="280" data-name="Butter Milk">
+    </div>
+  </div>
+</section>
+
+<section class="menu">
+  <h2>Desi Chutneys</h2>
+  <div class="grid-container">
+    <div class="beverage-item">
+      <img src="mint chutney.jpg" alt="Mint Chutney" />
+      <div class="food-info">
+        <h3>Mint Chutney</h3>
+        <p>Refreshing chutney made with mint, coriander, and spices.</p>
+        <span>PKR 60</span>
+      </div>
+      <input type="checkbox" class="food-select" data-price="60" data-name="Mint Chutney" />
+    </div>
+    <div class="beverage-item">
+      <img src="imli chutney.jpg" alt="Imli Chutney" />
+      <div class="food-info">
+        <h3>Imli Chutney</h3>
+        <p>Sour-sweet chutney made with tamarind, jaggery, and spices.</p>
+        <span>PKR 45</span>
+      </div>
+      <input type="checkbox" class="food-select" data-price="45" data-name="Imli Chutney" />
+    </div>
+    <div class="beverage-item">
+      <img src="garlic.jpg" alt="Garlic Chutney" />
+      <div class="food-info">
+        <h3>Garlic Chutney</h3>
+        <p>Spicy chutney made with red chilies and garlic paste.</p>
+        <span>PKR 35</span>
+      </div>
+      <input type="checkbox" class="food-select" data-price="35" data-name="Garlic Chutney" />
+    </div>
+  </div>
+    </div>
+    
+
+    <div id="about" class="page">
+        <h2>Welcome to Desi Food Corner - A Taste of Tradition!</h2>
+        <p>
+            At Desi Food Corner, we bring the rich, vibrant flavors of South Asian cuisine straight to your plate. Our journey began with a simple passion: to serve authentic desi food made with love, tradition, and the finest ingredients.<br><br>
+            From sizzling BBQ platters and fragrant biryanis to freshly baked naan and homestyle curries, every dish we serve is a celebration of our heritage. Whether you’re craving a hearty meal or a quick snack, we’ve got something that feels just like home.<br><br>
+            We believe food is more than just eating — it’s about sharing culture, creating memories, and bringing people together. That’s why every bite at Desi Food Corner reflects the warmth of desi hospitality and the comfort of homemade flavors.<br><br>
+            Join us for a taste of home, where every meal tells a story.
+        </p>
+    </div>
+<div class="cart" title="Your Cart">
+  🛒 Total: PKR <span id="cartTotal">0</span>
+</div>
+   <!-- Add other food items similarly -->
+        </div>
+    </section>
+    <!-- Add other menu sections similarly -->
+</div>
+
+<!-- Cart box displayed at fixed position -->
+  <h3>Cart Items</h3>
+  <div id="cartItems" class="cart-items">
+    <!-- Dynamically generated list of selected items will be here -->
+  </div>
+  <div class="cart-total">
+    
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const checkboxes = document.querySelectorAll('.food-select');
+    const cartItemsContainer = document.getElementById('cartItems');
+    const cartTotalElement = document.getElementById('cartTotal');
+    function updateCart() {
+      let total = 0;
+      cartItemsContainer.innerHTML = '';
+      checkboxes.forEach(chk => {
+        if (chk.checked) {
+          const name = chk.dataset.name || 'Item';
+          const price = parseInt(chk.dataset.price) || 0;
+          total += price;
+
+          const itemDiv = document.createElement('div');
+          itemDiv.className = 'cart-item';
+
+          const itemName = document.createElement('span');
+          itemName.textContent = name;
+
+          const itemPrice = document.createElement('span');
+          itemPrice.textContent = `PKR ${price}`;
+
+          itemDiv.appendChild(itemName);
+          itemDiv.appendChild(itemPrice);
+          cartItemsContainer.appendChild(itemDiv);
+        }
+      });
+      cartTotalElement.textContent = total;
+    }
+    checkboxes.forEach(chk => {
+      chk.addEventListener('change', updateCart);
+    });
+    updateCart(); // Initialize cart on page load
+  });
+</script>
+
+</body>
+</html>
